@@ -1,16 +1,11 @@
 import { useCallback } from 'react'
-import Particles from '@tsparticles/react'
+import Particles, { ParticlesProvider } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 
-export default function ParticleField() {
-  const particlesInit = useCallback(async (engine) => {
-    await loadSlim(engine)
-  }, [])
-
+function ParticlesContent() {
   return (
     <Particles
       id="particles"
-      init={particlesInit}
       style={{
         position: 'fixed',
         inset: 0,
@@ -58,5 +53,17 @@ export default function ParticleField() {
         detectRetina: true
       }}
     />
+  )
+}
+
+export default function ParticleField() {
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine)
+  }, [])
+
+  return (
+    <ParticlesProvider init={particlesInit}>
+      <ParticlesContent />
+    </ParticlesProvider>
   )
 }
