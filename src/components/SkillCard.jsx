@@ -1,3 +1,4 @@
+import BorderGlow from './BorderGlow/BorderGlow'
 import styles from './SkillCard.module.css'
 
 const ICONS = {
@@ -17,7 +18,17 @@ export default function SkillCard({ skill }) {
       : styles.barFillLow
 
   return (
-    <div className={styles.card}>
+    <BorderGlow
+      backgroundColor="#111118"
+      borderRadius={12}
+      glowColor="190 100 50"
+      glowIntensity={0.6}
+      edgeSensitivity={35}
+      glowRadius={24}
+      coneSpread={22}
+      colors={['#4DFFFF', '#4DFFCF', '#38bdf8']}
+      fillOpacity={0.2}
+    >
       <div className={styles.header}>
         <div className={styles.icon}>
           {ICONS[skill.name] || '📌'}
@@ -38,6 +49,6 @@ export default function SkillCard({ skill }) {
           <span key={tool} className={styles.tool}>{tool}</span>
         ))}
       </div>
-    </div>
+    </BorderGlow>
   )
 }

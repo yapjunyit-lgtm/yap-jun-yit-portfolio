@@ -9,9 +9,11 @@ export default function Profile() {
         <ScrollReveal>
           <div className={styles.grid}>
             <div className={styles.photoWrapper}>
-              <div className={styles.photoPlaceholder}>
-                <span className={styles.photoPlaceholderIcon}>📷</span>
-              </div>
+              <img
+                src="/profile.jpg"
+                alt="Yap Jun Yit"
+                className={styles.photo}
+              />
               <div className={styles.photoGlow} />
             </div>
 

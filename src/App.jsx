@@ -1,4 +1,4 @@
-import ParticleField from './components/ParticleField'
+import DarkVeil from './components/DarkVeil/DarkVeil'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Profile from './components/Profile'
@@ -9,7 +9,14 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <>
-      <ParticleField />
+      <div style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 0,
+        pointerEvents: 'none'
+      }}>
+        <DarkVeil />
+      </div>
       <Navbar />
       <main>
         <Hero />

@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Large media files
+public/backgroud.mp4
+public/profile-original.jpg

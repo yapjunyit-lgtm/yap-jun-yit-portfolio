@@ -9,6 +9,18 @@ export default function Hero() {
 
   return (
     <section id="hero" className={styles.hero}>
+      <video
+        className={styles.video}
+        src="/backgroud.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'><rect fill='%2308080F' width='1920' height='1080'/></svg>"
+      />
+      <div className={styles.overlay} />
+      <div className={styles.vignette} />
       <div className="container">
         <ScrollReveal>
           <div className={styles.content}>

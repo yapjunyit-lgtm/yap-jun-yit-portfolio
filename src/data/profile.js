@@ -8,7 +8,6 @@ export const profile = {
   location: "Kuala Lumpur / Petaling Jaya",
   stats: [
     { value: "12", label: "Projects" },
-    { value: "3.67", label: "CGPA" },
     { value: "3", label: "Languages" },
     { value: "2+", label: "Years Exp" },
   ],
@@ -21,7 +20,6 @@ export const profile = {
     school: "Taylor's University",
     degree: "BSc Computer Science (Honours)",
     focus: "Data Science + Cybersecurity",
-    cgpa: "3.67",
     years: "2024 – 2027"
   }
 }

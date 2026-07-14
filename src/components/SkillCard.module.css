@@ -1,16 +1,3 @@
-.card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  padding: 28px;
-  transition: all 400ms var(--ease-out-expo);
-}
-
-.card:hover {
-  border-color: var(--border-active);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-}
-
 .header {
   display: flex;
   align-items: center;
