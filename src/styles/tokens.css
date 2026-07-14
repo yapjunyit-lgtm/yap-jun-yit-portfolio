@@ -1,0 +1,35 @@
+:root {
+  /* Background */
+  --bg-primary: #08080F;
+  --bg-surface: #111118;
+  --bg-surface-hover: #16161F;
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-active: rgba(255, 255, 255, 0.10);
+
+  /* Accent */
+  --accent: #4DFFFF;
+  --accent-glow: rgba(77, 255, 255, 0.15);
+  --accent-glow-strong: rgba(77, 255, 255, 0.30);
+
+  /* Text */
+  --text-primary: #ECECEC;
+  --text-secondary: #8888A0;
+  --text-muted: #555568;
+
+  /* Warm accent */
+  --success-warm: #4DFFCF;
+
+  /* Spacing */
+  --max-width: 1700px;
+  --nav-height: 64px;
+
+  /* Typography */
+  --font-sans: 'Inter', 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-normal: 600ms;
+}
