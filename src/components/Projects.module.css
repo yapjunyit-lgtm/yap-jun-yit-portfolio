@@ -1,0 +1,12 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 0;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
