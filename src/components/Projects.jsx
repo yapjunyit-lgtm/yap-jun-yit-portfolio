@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef } from 'react'
 import { projects } from '../data/projects'
 import ProjectCard from './ProjectCard'
+import ProjectModal from './ProjectModal'
 import styles from './Projects.module.css'
 
 function smoothScrollTo(track, targetLeft, duration = 700) {
@@ -25,6 +26,7 @@ export default function Projects() {
   const trackRef = useRef(null)
   const scrollRaf = useRef(null)
   const [active, setActive] = useState(0)
+  const [selectedProject, setSelectedProject] = useState(null)
 
   const getCardCenter = useCallback((index) => {
     const track = trackRef.current
@@ -79,11 +81,28 @@ export default function Projects() {
     })
   }, [active])
 
+  // Modal handlers
+  const handleSelect = useCallback((project) => {
+    setSelectedProject(project)
+  }, [])
+
+  const handleClose = useCallback(() => {
+    setSelectedProject(null)
+  }, [])
+
+  const handleNavigate = useCallback((index) => {
+    setSelectedProject(projects[index])
+    setActive(index)
+    scrollToCard(index)
+  }, [scrollToCard])
+
   return (
     <section id="projects" className={styles.section}>
       <div className="container">
         <p className="section-label">[SECTION_02]</p>
         <h2 className="section-heading">Featured Projects</h2>
+
+        <p className={styles.hint}>Click a project to learn more</p>
 
         <div className={styles.carousel}>
           <button onClick={prev} className={styles.arrow} aria-label="Previous">
@@ -96,6 +115,7 @@ export default function Projects() {
                 key={project.id}
                 project={project}
                 isActive={idx === active}
+                onSelect={handleSelect}
               />
             ))}
           </div>
@@ -119,6 +139,15 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          projects={projects}
+          onClose={handleClose}
+          onNavigate={handleNavigate}
+        />
+      )}
     </section>
   )
 }
