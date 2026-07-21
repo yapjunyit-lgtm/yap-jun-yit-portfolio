@@ -1,11 +1,6 @@
 import BorderGlow from './BorderGlow/BorderGlow'
 import styles from './ProjectCard.module.css'
-
-const MEDIA_EXTENSIONS = /\.(mp4|webm|mov)$/i
-
-function isVideo(path) {
-  return MEDIA_EXTENSIONS.test(path)
-}
+import { isVideo } from '../lib/media'
 
 export default function ProjectCard({ project, isActive, onSelect }) {
   const handleClick = () => {

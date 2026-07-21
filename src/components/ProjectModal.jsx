@@ -1,20 +1,21 @@
-import { useEffect, useCallback, useRef } from 'react'
+import { useEffect, useCallback, useRef, useState } from 'react'
 import styles from './ProjectModal.module.css'
-
-const MEDIA_EXTENSIONS = /\.(mp4|webm|mov)$/i
-
-function isVideo(path) {
-  return MEDIA_EXTENSIONS.test(path)
-}
+import { isVideo } from '../lib/media'
 
 export default function ProjectModal({ project, projects, onClose, onNavigate }) {
   const overlayRef = useRef(null)
+  const closeBtnRef = useRef(null)
+  const previousFocusRef = useRef(null)
+  const [closing, setClosing] = useState(false)
   const currentIndex = projects.findIndex((p) => p.id === project.id)
   const hasPrev = currentIndex > 0
   const hasNext = currentIndex < projects.length - 1
 
   const close = useCallback(() => {
-    if (onClose) onClose()
+    setClosing(true)
+    setTimeout(() => {
+      if (onClose) onClose()
+    }, 250)
   }, [onClose])
 
   const goTo = useCallback((index) => {
@@ -50,10 +51,16 @@ export default function ProjectModal({ project, projects, onClose, onNavigate })
     return () => window.removeEventListener('keydown', handleKey)
   }, [close, prev, next])
 
-  // Lock body scroll
+  // Lock body scroll + focus management
   useEffect(() => {
+    previousFocusRef.current = document.activeElement
+    const prevOverflow = document.body.style.overflow
+    closeBtnRef.current?.focus()
     document.body.style.overflow = 'hidden'
-    return () => { document.body.style.overflow = '' }
+    return () => {
+      document.body.style.overflow = prevOverflow
+      previousFocusRef.current?.focus()
+    }
   }, [])
 
   const handleOverlayClick = (e) => {
@@ -65,16 +72,17 @@ export default function ProjectModal({ project, projects, onClose, onNavigate })
 
   return (
     <div
-      className={styles.overlay}
+      className={`${styles.overlay} ${closing ? styles.overlayClosing : ''}`}
       ref={overlayRef}
       onClick={handleOverlayClick}
       role="dialog"
       aria-modal="true"
       aria-label={project.title}
     >
-      <div className={styles.modal}>
+      <div className={`${styles.modal} ${closing ? styles.modalClosing : ''}`}>
         {/* Close button */}
         <button
+          ref={closeBtnRef}
           className={styles.closeBtn}
           onClick={close}
           aria-label="Close"
@@ -99,7 +107,7 @@ export default function ProjectModal({ project, projects, onClose, onNavigate })
         </button>
 
         {/* Content */}
-        <div className={styles.body}>
+        <div className={styles.body} key={project.id}>
           {hasMedia && (
             <div className={styles.mediaArea}>
               {isVideo(project.image) ? (
