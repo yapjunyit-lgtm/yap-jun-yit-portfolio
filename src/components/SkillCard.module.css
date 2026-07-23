@@ -1,3 +1,7 @@
+.card {
+  padding: 28px 28px 32px;
+}
+
 .header {
   display: flex;
   align-items: center;
