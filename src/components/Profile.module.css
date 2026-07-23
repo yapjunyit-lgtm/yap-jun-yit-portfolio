@@ -130,3 +130,81 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+@media (max-width: 768px) {
+  .section {
+    min-height: auto;
+    padding: 80px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .photoWrapper {
+    width: 240px;
+    height: 280px;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .right {
+    gap: 24px;
+  }
+
+  .intro p {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .contactPills {
+    gap: 8px;
+  }
+
+  .pill {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .statsRow {
+    gap: 16px;
+    padding-top: 20px;
+  }
+
+  .statValue {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .grid {
+    gap: 32px;
+  }
+
+  .photoWrapper {
+    width: 200px;
+    height: 240px;
+  }
+
+  .intro p {
+    font-size: 14px;
+  }
+
+  .pill {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .statValue {
+    font-size: 28px;
+  }
+
+  .statLabel {
+    font-size: 10px;
+  }
+}

@@ -125,3 +125,57 @@
   color: var(--text-muted);
   letter-spacing: 2px;
 }
+
+@media (max-width: 768px) {
+  .content {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+
+  .headline {
+    font-size: 40px;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .cta {
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+
+  .scrollHint {
+    bottom: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 0 16px;
+  }
+
+  .headline {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .cta {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+}

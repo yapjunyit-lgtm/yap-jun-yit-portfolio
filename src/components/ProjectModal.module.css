@@ -244,3 +244,117 @@
   border-radius: 12px;
   border: 1px solid var(--border-subtle);
 }
+
+@media (max-width: 768px) {
+  .overlay {
+    padding: 16px;
+    align-items: flex-start;
+  }
+
+  .modal {
+    max-height: calc(100vh - 32px);
+    border-radius: 14px;
+  }
+
+  .closeBtn {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .arrowLeft {
+    left: 8px;
+  }
+
+  .arrowRight {
+    right: 8px;
+  }
+
+  .textContent {
+    padding: 24px 20px 32px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .links {
+    flex-direction: column;
+  }
+
+  .linkBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  .counter {
+    bottom: 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 8px;
+  }
+
+  .modal {
+    max-height: calc(100vh - 16px);
+    border-radius: 12px;
+  }
+
+  .arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    top: 30%;
+  }
+
+  .arrowLeft {
+    left: 4px;
+  }
+
+  .arrowRight {
+    right: 4px;
+  }
+
+  .textContent {
+    padding: 20px 16px 28px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .counter {
+    bottom: 8px;
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+}

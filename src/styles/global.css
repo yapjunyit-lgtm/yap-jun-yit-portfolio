@@ -81,3 +81,31 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .section-heading {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+    margin-bottom: 32px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-heading {
+    font-size: 28px;
+  }
+}

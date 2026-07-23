@@ -96,3 +96,44 @@
   width: 24px;
   border-radius: 4px;
 }
+
+@media (max-width: 768px) {
+  .section {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .hint {
+    font-size: 11px;
+    margin-top: -24px;
+    margin-bottom: 28px;
+  }
+
+  .carousel {
+    padding: 0;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .track {
+    gap: 16px;
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .track {
+    gap: 12px;
+  }
+
+  .dots {
+    gap: 6px;
+    margin-top: 20px;
+  }
+}
