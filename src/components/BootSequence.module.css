@@ -1,0 +1,98 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 800ms var(--ease-out-expo), visibility 800ms var(--ease-out-expo);
+}
+
+.exiting {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+}
+
+.glow {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(77, 255, 255, 0.04), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.terminal {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 2;
+  min-width: 400px;
+  max-width: 90vw;
+}
+
+.line {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 500ms var(--ease-out-expo), transform 500ms var(--ease-out-expo);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.lineVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lineVisible:last-of-type {
+  color: var(--accent);
+}
+
+.prompt {
+  color: var(--accent);
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 16px;
+  animation: blink 1s step-end infinite;
+  margin-top: 4px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .terminal {
+    font-size: 13px;
+    min-width: 0;
+    padding: 0 24px;
+  }
+
+  .line {
+    white-space: normal;
+    word-break: break-all;
+  }
+}

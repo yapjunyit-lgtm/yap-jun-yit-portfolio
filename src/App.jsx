@@ -1,3 +1,4 @@
+import BootSequence from './components/BootSequence'
 import DarkVeil from './components/DarkVeil/DarkVeil'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -9,6 +10,8 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <>
+      <BootSequence />
+
       <div style={{
         position: 'fixed',
         inset: 0,
@@ -17,6 +20,7 @@ export default function App() {
       }}>
         <DarkVeil />
       </div>
+
       <Navbar />
       <main>
         <Hero />
