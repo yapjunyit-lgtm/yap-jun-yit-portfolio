@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import QuantumHole from './QuantumHole'
 import styles from './BootSequence.module.css'
 
 const LINES = [
@@ -51,8 +52,8 @@ export default function BootSequence() {
 
   return (
     <div className={`${styles.overlay} ${exiting ? styles.exiting : ''}`}>
+      <QuantumHole />
       <div className={styles.scanlines} />
-      <div className={styles.glow} />
       <div className={styles.terminal}>
         {LINES.map((line) => (
           <div
