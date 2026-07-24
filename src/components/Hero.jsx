@@ -1,4 +1,5 @@
 import { profile } from '../data/profile'
+import { assetPath } from '../lib/asset'
 import ScrollReveal from './ScrollReveal'
 import styles from './Hero.module.css'
 
@@ -11,7 +12,7 @@ export default function Hero() {
     <section id="hero" className={styles.hero}>
       <video
         className={styles.video}
-        src="/background.mp4"
+        src={assetPath('/background.mp4')}
         autoPlay
         muted
         loop

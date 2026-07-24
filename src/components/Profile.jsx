@@ -1,4 +1,5 @@
 import { profile } from '../data/profile'
+import { assetPath } from '../lib/asset'
 import ScrollReveal from './ScrollReveal'
 import styles from './Profile.module.css'
 
@@ -10,7 +11,7 @@ export default function Profile() {
           <div className={styles.grid}>
             <div className={styles.photoWrapper}>
               <img
-                src="/profile.jpg"
+                src={assetPath('/profile.jpg')}
                 alt="Yap Jun Yit"
                 className={styles.photo}
               />
